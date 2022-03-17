@@ -45,7 +45,7 @@ const cartDOM = document.getElementById('cart')
         //initialize cartDOM
 cartDOM.innerHTML =
     `
-            <h1>C</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" style="width:50px;">
     `
 ///////////////cartDOM events
 cartDOM.addEventListener('mouseleave',(e)=>{
@@ -56,8 +56,9 @@ cartDOM.addEventListener('mouseleave',(e)=>{
     `
     e.target.innerHTML =
     `
-            <h1>C</h1>
+            <img src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" style="width:50px;">
     `
+
 })
 
 cartDOM.addEventListener('mouseenter',(e)=>{
@@ -199,38 +200,45 @@ function displayProducts(isAdmin){
         result.map(data=>{
             if(isAdmin){
                 return(
-                    `
-                     <div class="card">
+                    ` 
+                     <div class="card w-75">
                         <div class="card-header">
                             <h3>${data.name}</h3>
                         </div>
-                        <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                                <p> ${data.description}.</p>
-                                
-                                <p>P${data.price}</p>
-                            <a class="btn btn-outline-success" href="./updateProduct.html?id=${data._id}")">Update Product</a>
-                            <footer class="btn btn-outline-danger" onclick="deleteProduct(\'${data._id}\')">Remove Product</footer>
-                        </blockquote>
+                        <div class="card-body row">
+                        <div class="col-4">
+                          <img class="img-fluid w-50 bg-success" src="https://cdn-icons-png.flaticon.com/512/3724/3724788.png">
+                         </div>
+                            <blockquote class="blockquote mb-0 col-6">
+                                    <p> ${data.description}.</p>
+                                    
+                                    <p>P${data.price}</p>
+                                <a class="btn btn-outline-success" href="./updateProduct.html?id=${data._id}")">Update Product</a>
+                                <footer class="btn btn-outline-danger" onclick="deleteProduct(\'${data._id}\')">Remove Product</footer>
+                            </blockquote>
                         </div>
                     </div>
                     `)
                 
             }else{
             return(
-        `
-         <div class="card">
-            <div class="card-header">
-                <h3>${data.name}</h3>
+        ` 
+        <div class="card w-75">
+           <div class="card-header">
+               <h3>${data.name}</h3>
+           </div>
+           <div class="card-body row">
+           <div class="col-4">
+             <img class="img-fluid w-50 bg-success" src="https://cdn-icons-png.flaticon.com/512/3724/3724788.png">
             </div>
-            <div class="card-body">
-            <blockquote class="blockquote mb-0">
+            <blockquote class="blockquote mb-0 col-6">
                     <p> ${data.description}.</p>
                     <p>P${data.price}</p>
                 <footer class="btn btn-outline-dark" onclick="addToCart(\'${data._id}\')">Add to Cart</footer>
             </blockquote>
             </div>
         </div>
+     </div>   
         `)}
         }).join('')
     }
