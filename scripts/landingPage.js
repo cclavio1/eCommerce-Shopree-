@@ -207,7 +207,7 @@ function displayProducts(isAdmin){
                         </div>
                         <div class="card-body row">
                         <div class="col-4">
-                          <img class="img-fluid w-50 bg-success" src="https://cdn-icons-png.flaticon.com/512/3724/3724788.png">
+                          <img class="img-fluid w-50 bg-success" src=${data.imgurl}>
                          </div>
                             <blockquote class="blockquote mb-0 col-6">
                                     <p> ${data.description}.</p>
@@ -229,7 +229,7 @@ function displayProducts(isAdmin){
            </div>
            <div class="card-body row">
            <div class="col-4">
-             <img class="img-fluid w-50 bg-success" src="https://cdn-icons-png.flaticon.com/512/3724/3724788.png">
+             <img class="img-fluid w-50 bg-success" src=${data.imgurl}>
             </div>
             <blockquote class="blockquote mb-0 col-6">
                     <p> ${data.description}.</p>
